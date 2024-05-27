@@ -10,4 +10,7 @@ public static class ServiceExtensions
                 builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
             );
         });
+
+    public static void ConfigureIISIntegration(this IServiceCollection services) =>
+        services.Configure<IISOptions>(options => { });
 }
