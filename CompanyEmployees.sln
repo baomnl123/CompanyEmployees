@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{F6E36B24-E6A7-47FA-B2D8-6CA4EFB0E268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyEmployees", "CompanyEmployees\CompanyEmployees.csproj", "{F6E36B24-E6A7-47FA-B2D8-6CA4EFB0E268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{9BF83359-F167-4628-A479-B7E56E756793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{522B14D1-B14B-472B-B917-DCB8706B0F42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +19,18 @@ Global
 		{F6E36B24-E6A7-47FA-B2D8-6CA4EFB0E268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E36B24-E6A7-47FA-B2D8-6CA4EFB0E268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E36B24-E6A7-47FA-B2D8-6CA4EFB0E268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF83359-F167-4628-A479-B7E56E756793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF83359-F167-4628-A479-B7E56E756793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF83359-F167-4628-A479-B7E56E756793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF83359-F167-4628-A479-B7E56E756793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522B14D1-B14B-472B-B917-DCB8706B0F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522B14D1-B14B-472B-B917-DCB8706B0F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522B14D1-B14B-472B-B917-DCB8706B0F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522B14D1-B14B-472B-B917-DCB8706B0F42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE37CA64-3EB8-4678-B16A-3AD55761993E}
 	EndGlobalSection
