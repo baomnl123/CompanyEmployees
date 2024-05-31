@@ -23,4 +23,14 @@ internal sealed class CompanyService(
 
         return companiesDto;
     }
+
+    public CompanyDto GetCompany(Guid companyId, bool trackChanges)
+    {
+        var company = _repositoryManager.Company.GetCompany(companyId, trackChanges);
+        // Check if company is null
+
+        var companyDto = _mapper.Map<CompanyDto>(company);
+
+        return companyDto;
+    }
 }
