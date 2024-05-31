@@ -27,4 +27,19 @@ internal sealed class EmployeeService(
 
         return employeesDto;
     }
+
+    public EmployeeDto GetEmployee(Guid companyId, Guid id, bool trackChanges)
+    {
+        var company = _repositoryManager.Company.GetCompany(companyId, trackChanges);
+        if (company == null)
+            throw new CompanyNotFoundException(companyId);
+
+        var employee = _repositoryManager.Employee.GetEmployee(companyId, id, trackChanges);
+        if (employee == null)
+            throw new EmployeeNotFoundException(id);
+
+        var employeeDto = _mapper.Map<EmployeeDto>(employee);
+
+        return employeeDto;
+    }
 }
