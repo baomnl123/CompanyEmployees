@@ -1,14 +1,19 @@
+using AutoMapper;
 using Contracts;
 using Service.Contracts;
 using Shared.DataTranserObjects;
 
 namespace Service;
 
-internal sealed class CompanyService(IRepositoryManager repositoryManager, ILoggerManager logger)
-    : ICompanyService
+internal sealed class CompanyService(
+    IRepositoryManager repositoryManager,
+    ILoggerManager logger,
+    IMapper mapper
+) : ICompanyService
 {
     private readonly IRepositoryManager _repositoryManager = repositoryManager;
     private readonly ILoggerManager _logger = logger;
+    private readonly IMapper _mapper = mapper;
 
     public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
     {
@@ -16,13 +21,8 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager, ILogg
         {
             var companies = _repositoryManager.Company.GetAllCompanies(trackChanges);
 
-            var companiesDto = companies
-                .Select(c => new CompanyDto(
-                    c.Id,
-                    c.Name ?? "",
-                    string.Join(' ', c.Address, c.Country)
-                ))
-                .ToList();
+            var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+
             return companiesDto;
         }
         catch (Exception ex)
