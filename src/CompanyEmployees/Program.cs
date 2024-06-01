@@ -21,6 +21,9 @@ builder
     .Services.AddControllers(config =>
     {
         config.RespectBrowserAcceptHeader = true;
+
+        // Return 406 Not Acceptable if the client request a media type that is not supported by the server.
+        config.ReturnHttpNotAcceptable = true;
     })
     .AddXmlDataContractSerializerFormatters()
     .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
