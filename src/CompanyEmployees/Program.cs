@@ -26,6 +26,7 @@ builder
         config.ReturnHttpNotAcceptable = true;
     })
     .AddXmlDataContractSerializerFormatters()
+    .AddCustomCSVFormatter()
     .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 
 builder
