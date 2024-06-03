@@ -1,4 +1,4 @@
-using Shared.DataTranserObjects;
+using Shared.DataTransferObjects;
 
 namespace Service.Contracts;
 

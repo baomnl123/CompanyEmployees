@@ -2,7 +2,7 @@ using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
 using Service.Contracts;
-using Shared.DataTranserObjects;
+using Shared.DataTransferObjects;
 
 namespace Service;
 
