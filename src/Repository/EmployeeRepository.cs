@@ -3,11 +3,10 @@ using Entities.Models;
 
 namespace Repository;
 
-public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
+public class EmployeeRepository(RepositoryContext repositoryContext)
+    : RepositoryBase<Employee>(repositoryContext),
+        IEmployeeRepository
 {
-    public EmployeeRepository(RepositoryContext repositoryContext)
-        : base(repositoryContext) { }
-
     public IEnumerable<Employee> GetEmployees(Guid companyId, bool trackChanges) =>
         FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
             .OrderBy(e => e.Name)

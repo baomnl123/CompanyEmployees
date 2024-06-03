@@ -4,11 +4,8 @@ using Repository.Configuration;
 
 namespace Repository;
 
-public class RepositoryContext : DbContext
+public class RepositoryContext(DbContextOptions options) : DbContext(options)
 {
-    public RepositoryContext(DbContextOptions options)
-        : base(options) { }
-
     public DbSet<Company>? Companies { get; set; }
     public DbSet<Employee>? Employees { get; set; }
 
